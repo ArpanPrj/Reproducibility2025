@@ -32,5 +32,7 @@ print(row_26)
 print(zsquared_180)
 
 tips_data <- read.csv("TipsR.csv", na.strings = ".") ## Read the CSV file and treat "." as NA
-summary(tips_data)
+
+# To know if the data was correctly uploaded
+summary(tips_data) 
 str(tips_data)

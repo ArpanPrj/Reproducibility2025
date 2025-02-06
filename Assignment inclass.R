@@ -31,7 +31,7 @@ print(subset_zdf2)
 print(row_26)
 print(zsquared_180)
 
-tips_data <- read.csv("TipsR.csv", na.strings = ".") ## Read the CSV file and treat "." as NA
+tips_data <- read.csv("https://raw.githubusercontent.com/ArpanPrj/Reproducibility2025/refs/heads/main/TipsR.csv", na.strings = ".") ## Read the CSV file and treat "." as NA
 
 # To know if the data was correctly uploaded
 summary(tips_data) 

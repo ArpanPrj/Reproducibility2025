@@ -20,7 +20,7 @@ subset_zdf1 <- subset(zdf, zsquared > 10 & zsquared < 100) # Subset the datafram
 subset_zdf2 <- zdf[zdf$zsquared > 10 & zdf$zsquared < 100, ] # Subset the dataframe using logical indexing
 
 
-row_26 <- zdf[26, ]# Subset the zdf dataframe to only include row 26
+row_26 <- zdf$zvec[26]# Subset the zdf dataframe to only include row 26 values
 
 zsquared_180 <- zdf$zsquared[180] #Subset the zdf dataframe to get only the zsquared value in the 180th row
 # we can also do this: zsquared_180<-zdf[180,3] as the zsquared is in the third column

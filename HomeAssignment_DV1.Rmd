@@ -38,7 +38,7 @@ ggplot(mtcars,aes(x=wt, y=mpg))+ #size=wt))+#### using ggplot, it takes data,(x 
 
 ```{r}
 ######ggplot with categorical X and numeric Y variables
-bull.richness<-read.csv("bull_richness.csv")
+bull.richness<-read.csv("https://raw.githubusercontent.com/ArpanPrj/Reproducibility2025/refs/heads/main/Bull_richness.csv")
 #Subsetting the soybean data under no till condition
 bull.richness.soy.no.till<-bull.richness[bull.richness$Crop=="Soy"&
                                            bull.richness$Treatment=="No-till",]

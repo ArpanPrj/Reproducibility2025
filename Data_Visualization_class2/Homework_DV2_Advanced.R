@@ -7,7 +7,7 @@ library(ggplot2)
 
 cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 
-sample.data.bac=read.csv("Data_Visualization_class2/BacterialAlpha.csv", na.strings = "na") #Reading the data
+sample.data.bac=read.csv("https://raw.githubusercontent.com/ArpanPrj/Reproducibility2025/refs/heads/main/Data_Visualization_class2/BacterialAlpha.csv", na.strings = "na") #Reading the data
 str(sample.data.bac)#View the structure of the dataset
 
 
@@ -95,7 +95,7 @@ water.imbibed.cor +
 
 #############################################
 #Creation of volcano plot
-diff.abund <- read.csv("Data_Visualization_class2/diff_abund.csv")# Load differential abundance data
+diff.abund <- read.csv("https://raw.githubusercontent.com/ArpanPrj/Reproducibility2025/refs/heads/main/Data_Visualization_class2/diff_abund.csv")# Load differential abundance data
 str(diff.abund)  # Display structure of the dataset
 diff.abund$log10_pvalue=-log10(diff.abund$p_CropSoybean)# Convert p-values to -log10 scale for better visualization
 diff.abund.label=diff.abund[diff.abund$log10_pvalue>30,]# Subset significant features

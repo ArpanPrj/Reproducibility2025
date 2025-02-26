@@ -1,0 +1,60 @@
+---
+title: "Assignment_Markdown"
+author: "Arpan"
+date: "2025-02-26"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+  md_document:
+    variant: gfm
+  pdf_document:
+  word_document:
+
+---
+
+```{r R code example,include=TRUE,echo=TRUE}
+#include decides whether to incude the chunk or not
+#echo decides whether to include codes or not
+##This is R code.
+summary(mtcars)
+
+```
+
+This is how to include figures
+
+```{r Include figures}
+library(ggplot2)
+data("mtcars")
+ggplot(mtcars,aes(x=wt,y=mpg))+
+  geom_point()
+```
+
+R markdown formatting options
+
+# First level header
+example_text
+*this is italics, one asterisk*
+**this is bold, two aestrisk**
+
+1. one item
+2. two item
+ - one subitem (dash does subitem)
+
+## Second level header
+### Third level header
+
+## Links
+[Link to my github](https://github.com/ArpanPrj/Reproducibility2025.git)
+
+## Images
+![Image ggplot](relative file path)
+
+## Formatted tables
+
+```{r}
+library(knitr)
+kable(mtcars,digits=3,format="markdown")
+#kable brings table, digits tells how many digits to keep after decimal
+```
+

@@ -3,13 +3,13 @@ title: "Inclass_assignment_R_markdown"
 author: "Arpan"
 date: "2025-02-27"
 output:
+  pdf_document: 
+    toc: true
   md_document:
     variant: gfm
   html_document:
     toc: true
     toc_float: true
-  pdf_document: 
-    toc: true
 ---
 
 # Question 1
@@ -107,9 +107,9 @@ figure
 # Question 3
 Knit your document together in the following formats: 
 a.	.docx (word document) OR .pdf with a table of contents
-  [Link for my pdf file]("https://github.com/ArpanPrj/Reproducibility2025/blob/main/R_markdown/Coding_Challenge_4/Coding_Challenge_4.pdf")
+  [**Link for my pdf file:  https://github.com/ArpanPrj/Reproducibility2025/blob/main/R_markdown/Coding_Challenge_4/Coding_Challenge_4.pdf**](https://github.com/ArpanPrj/Reproducibility2025/blob/main/R_markdown/Coding_Challenge_4/Coding_Challenge_4.pdf)
 b.	GitHub flavored markdown (.md file). 
-  [Link for my md file]("https://github.com/ArpanPrj/Reproducibility2025/blob/main/R_markdown/Coding_Challenge_4/Coding_Challenge_4.md")
+  [**Link for my md file: "https://github.com/ArpanPrj/Reproducibility2025/blob/main/R_markdown/Coding_Challenge_4/Coding_Challenge_4.md**](https://github.com/ArpanPrj/Reproducibility2025/blob/main/R_markdown/Coding_Challenge_4/Coding_Challenge_4.md)
 
 # Question 4
 
@@ -131,6 +131,6 @@ DONE
 
 Please provide me a clickable link to your GitHub
 
-[Link to my Github]("https://github.com/ArpanPrj/Reproducibility2025.git")
+[**Link to my Github**](https://github.com/ArpanPrj/Reproducibility2025.git)
 
 

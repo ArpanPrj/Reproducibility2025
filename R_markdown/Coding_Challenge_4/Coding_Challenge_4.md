@@ -191,10 +191,10 @@ figure
 # Question 3
 
 Knit your document together in the following formats: a. .docx (word
-document) OR .pdf with a table of contents [Link for my pdf
-file](%22https://github.com/ArpanPrj/Reproducibility2025/blob/main/R_markdown/Coding_Challenge_4/Coding_Challenge_4.pdf%22)
-b. GitHub flavored markdown (.md file). [Link for my md
-file](%22https://github.com/ArpanPrj/Reproducibility2025/blob/main/R_markdown/Coding_Challenge_4/Coding_Challenge_4.md%22)
+document) OR .pdf with a table of contents [**Link for my pdf file:
+https://github.com/ArpanPrj/Reproducibility2025/blob/main/R_markdown/Coding_Challenge_4/Coding_Challenge_4.pdf**](https://github.com/ArpanPrj/Reproducibility2025/blob/main/R_markdown/Coding_Challenge_4/Coding_Challenge_4.pdf)
+b. GitHub flavored markdown (.md file). [**Link for my md file:
+“https://github.com/ArpanPrj/Reproducibility2025/blob/main/R_markdown/Coding_Challenge_4/Coding_Challenge_4.md**](https://github.com/ArpanPrj/Reproducibility2025/blob/main/R_markdown/Coding_Challenge_4/Coding_Challenge_4.md)
 
 # Question 4
 
@@ -218,5 +218,5 @@ DONE
 
 Please provide me a clickable link to your GitHub
 
-[Link to my
-Github](%22https://github.com/ArpanPrj/Reproducibility2025.git%22)
+[**Link to my
+Github**](https://github.com/ArpanPrj/Reproducibility2025.git)

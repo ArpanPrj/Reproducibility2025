@@ -1,4 +1,4 @@
-[Manuscript link](https://doi.org/10.1094/PDIS-06-21-1253-RE)
+[**Manuscript link**](https://doi.org/10.1094/PDIS-06-21-1253-RE)
 
 ``` r
 library(ggplot2)

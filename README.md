@@ -77,7 +77,10 @@ fs::dir_tree()
     │   ├── Coding_Challenge_4.Rmd      # R-markdown file for coding challenge 4 for R-Markdown class
     │   └── Coding_Challenge_4_files    # Folder containing all the figures of  coding challenge 4 for R-Markdown class
     │       └── figure-gfm
-    │           └── Combined-1.png
+    │           ├── 15ADON-1.png
+    │           ├── Combined-1.png
+    │           ├── DON-1.png
+    │           └── Seed mass-1.png
     ├── Homework_Markdown.html          # Html formatted file for home assignment for R-markdown class
     ├── Homework_Markdown.md            # Github formatted markdown file for home assignment for R-Markdown class
     ├── Homework_Markdown.Rmd           # R-markdown file for home assignment for R-markdown class

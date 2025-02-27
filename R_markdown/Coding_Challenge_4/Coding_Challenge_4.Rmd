@@ -3,13 +3,13 @@ title: "Inclass_assignment_R_markdown"
 author: "Arpan"
 date: "2025-02-27"
 output:
-  pdf_document: 
-    toc: true
   md_document:
     variant: gfm
   html_document:
     toc: true
     toc_float: true
+  pdf_document: 
+    toc: true
 ---
 
 # Question 1
@@ -28,7 +28,7 @@ Take the code you wrote for coding challenge 3, question 5, and incorporate it i
 
 a.	At the top of the document, make a clickable link to the manuscript where these data are published. The link is here:  
 
-  i.	Noel, Z.A., Roze, L.V., Breunig, M., Trail, F. 2022. Endophytic fungi as promising     biocontrol agent to protect wheat from Fusarium graminearum head blight. Plant Disease. https://doi.org/10.1094/PDIS-06-21-1253-RE
+Noel, Z.A., Roze, L.V., Breunig, M., Trail, F. 2022. Endophytic fungi as promising          biocontrol agent to protect wheat from Fusarium graminearum head blight. Plant Disease.        https://doi.org/10.1094/PDIS-06-21-1253-RE
   
 b.	Read the data using a relative file path with na.strings option set to “na”. This means you need to put the Mycotoxin.csv file we have used for the past two weeks into your directory, which git tracks. 
 

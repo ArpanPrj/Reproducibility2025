@@ -13,9 +13,11 @@ and .HTML rendered files are also available.
 - [R Markdown Class](R_markdown/Homework_Markdown.md)
 
 ## File Tree
+```
 library(fs)
 fs::dir_tree()
 
+```
 ```
 .
 ├── Basics_to_R

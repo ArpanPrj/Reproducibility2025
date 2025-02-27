@@ -3,24 +3,35 @@ title: "Inclass_assignment_R_markdown"
 author: "Arpan"
 date: "2025-02-27"
 output:
-  md_document:
-    variant: gfm
   pdf_document: 
     toc: true
+  md_document:
+    variant: gfm
+  html_document:
+    toc: true
+    toc_float: true
 ---
 
-## Question 1
+# Question 1
+
 Explain the following
+
 a.	YAML header
 A YAML header is an important cpmponent at the beginning of an R Markdown document. It is enclosed between triple dashes (---) and uses YAML syntax to define various parameters and configuration options. This header serves multiple purposes, including specifying document metadata (such as title, author, and date), setting the output format (e.g., HTML, PDF, or Word), customizing document appearance (themes, table of contents), defining parameters for use throughout the document, and specifying bibliography details.  
+
 b.	Literate programming
 Literate programming is a way of writing code that focuses on making it easy for people to understand. It combines natural language with code snippets to explain how programs work. This approach helps create clear documentation and makes it easier for programmers to grasp the logic behind the code. It also allows for two types of output: one for computers to run and another for humans to read. This method has inspired tools such as R Markdown, which are widely used in science and data analysis.
 
-## Question 2
+# Question 2
+
 Take the code you wrote for coding challenge 3, question 5, and incorporate it into your R markdown file. Some of you have already been doing this, which is great! Your final R markdown file should have the following elements.
+
 a.	At the top of the document, make a clickable link to the manuscript where these data are published. The link is here:  
+
   i.	Noel, Z.A., Roze, L.V., Breunig, M., Trail, F. 2022. Endophytic fungi as promising     biocontrol agent to protect wheat from Fusarium graminearum head blight. Plant Disease. https://doi.org/10.1094/PDIS-06-21-1253-RE
+  
 b.	Read the data using a relative file path with na.strings option set to “na”. This means you need to put the Mycotoxin.csv file we have used for the past two weeks into your directory, which git tracks. 
+
 c.	Make a separate code chunk for the figures plotting the DON data, 15ADON, and Seedmass, and one for the three combined using ggarrange. 
 
 
@@ -41,7 +52,7 @@ datum$BioRep=as.factor(datum$BioRep) # Convert biological replicate column to a 
 cbbPalette <- c( "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7","#000000")
 ```
 
-### DON 
+## DON 
 ```{r DON}
 plot1<-ggplot(datum, aes(Treatment,DON,fill=Cultivar))+
   geom_boxplot(outlier.shape = NA)+ #adding boxplot in figure but removing outliers(the black dots that popped up)
@@ -55,7 +66,7 @@ plot1<-ggplot(datum, aes(Treatment,DON,fill=Cultivar))+
 plot1
 ```
 
-### 15ADON
+## 15ADON
 ```{r 15ADON}
 # Change the y-variable to plot X15ADON and MassperSeed_mg. The y-axis label should now be “15ADON” and “Seed Mass (mg)”. Save plots made in questions 1 and 3 into three separate R objects. 
  plot2<-ggplot(datum, aes(Treatment,X15ADON,fill=Cultivar))+#Changing y variable to X15DON
@@ -71,7 +82,7 @@ plot2
 
 ```
 
-### Seed mass
+## Seed mass
 ```{r Seed mass}
 plot3<-ggplot(datum, aes(Treatment,MassperSeed_mg,fill=Cultivar))+#Changing y variable to MassperSpeed_mg
    geom_boxplot(outlier.shape = NA)+
@@ -84,33 +95,42 @@ plot3<-ggplot(datum, aes(Treatment,MassperSeed_mg,fill=Cultivar))+#Changing y va
    geom_pwc(aes(group=Treatment),method="t.test",label="{p.adj.format}{p.adj.signif}",hide.ns=T)
 plot3
 ```
-### Combined
+
+## Combined
+
 ```{r Combined}
 # combining all three figures into one with three columns and one row.
 figure <- ggarrange(plot1,plot2,plot3,labels = c("A","B","C"),nrow = 1,ncol = 3, common.legend = T)
 figure
 ```
 
-## Question 3
+# Question 3
 Knit your document together in the following formats: 
 a.	.docx (word document) OR .pdf with a table of contents
   [Link for my pdf file](R_markdown/Coding_Challenge_4/Coding_Challenge_4.pdf)
 b.	GitHub flavored markdown (.md file). 
   [Link for my md file](R_markdown/Coding_Challenge_4/Coding_Challenge_4.md)
 
-## Question 4
-Push the .docx or .pdf and .md files to GitHub inside a directory called Coding Challenge 4. 
+# Question 4
+
+Push the .docx or .pdf and .md files to GitHub inside a directory called Coding Challenge 4.
+
 DONE
 
-## Question 5
+# Question 5
+
 Now edit, commit, and push the README file for your repository and include the following elements.
+
 a.	A clickable link in your README to your GitHub flavored .md file
+
 b.	A file tree of your GitHub repository. 
 
 DONE
 
-## Question 6
- Please provide me a clickable link to your GitHub
- [Link to my Github](https://github.com/ArpanPrj/Reproducibility2025.git)
+# Question 6
+
+Please provide me a clickable link to your GitHub
+
+[Link to my Github](https://github.com/ArpanPrj/Reproducibility2025.git)
 
 

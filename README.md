@@ -14,7 +14,7 @@ and .HTML rendered files are also available.
 - [Data Visualization Intro](Data_Visualization_class1/HomeAssignment_DV1.md)
 - [Data Visualization Advanced](Data_Visualization_class2/Homework_DV2_Advanced.md)
 - [R Markdown Class](R_markdown/Homework_Markdown.md)
-- [Coding Challenge 4 readme](R_markdown/Coding_Challange_4/Coding_Challenge_4.md)
+- [Coding Challenge 4 readme](R_markdown/Coding_Challenge_4/Coding_Challenge_4.md)
 
 ## File Tree
 ```r

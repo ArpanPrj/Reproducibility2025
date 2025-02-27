@@ -30,16 +30,15 @@ following elements.
 1.  At the top of the document, make a clickable link to the manuscript
     where these data are published. The link is here:
 
-2.  Noel, Z.A., Roze, L.V., Breunig, M., Trail, F. 2022. Endophytic
-    fungi as promising biocontrol agent to protect wheat from Fusarium
-    graminearum head blight. Plant Disease.
-    <https://doi.org/10.1094/PDIS-06-21-1253-RE>
+Noel, Z.A., Roze, L.V., Breunig, M., Trail, F. 2022. Endophytic fungi as
+promising biocontrol agent to protect wheat from Fusarium graminearum
+head blight. Plant Disease. <https://doi.org/10.1094/PDIS-06-21-1253-RE>
 
-3.  Read the data using a relative file path with na.strings option set
+2.  Read the data using a relative file path with na.strings option set
     to “na”. This means you need to put the Mycotoxin.csv file we have
     used for the past two weeks into your directory, which git tracks.
 
-4.  Make a separate code chunk for the figures plotting the DON data,
+3.  Make a separate code chunk for the figures plotting the DON data,
     15ADON, and Seedmass, and one for the three combined using
     ggarrange.
 
@@ -138,8 +137,9 @@ plot3
     ## Warning: Removed 2 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-![](Coding_Challenge_4_files/figure-gfm/Seed%20mass-1.png)<!-- --> \##
-Combined
+![](Coding_Challenge_4_files/figure-gfm/Seed%20mass-1.png)<!-- -->
+
+## Combined
 
 ``` r
 # combining all three figures into one with three columns and one row.
@@ -192,9 +192,9 @@ figure
 
 Knit your document together in the following formats: a. .docx (word
 document) OR .pdf with a table of contents [Link for my pdf
-file](R_markdown/Coding_Challenge_4/Coding_Challenge_4.pdf) b. GitHub
-flavored markdown (.md file). [Link for my md
-file](R_markdown/Coding_Challenge_4/Coding_Challenge_4.md)
+file](%22R_markdown/Coding_Challenge_4/Coding_Challenge_4.pdf%22) b.
+GitHub flavored markdown (.md file). [Link for my md
+file](%22R_markdown/Coding_Challenge_4/Coding_Challenge_4.md%22)
 
 # Question 4
 
@@ -218,4 +218,5 @@ DONE
 
 Please provide me a clickable link to your GitHub
 
-[Link to my Github](https://github.com/ArpanPrj/Reproducibility2025.git)
+[Link to my
+Github](%22https://github.com/ArpanPrj/Reproducibility2025.git%22)

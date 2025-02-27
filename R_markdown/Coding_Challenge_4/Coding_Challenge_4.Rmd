@@ -3,10 +3,10 @@ title: "Inclass_assignment_R_markdown"
 author: "Arpan"
 date: "2025-02-27"
 output:
-  pdf_document: 
-    toc: true
   md_document:
     variant: gfm
+  pdf_document: 
+    toc: true
 ---
 [**Manuscript link**: https://doi.org/10.1094/PDIS-06-21-1253-RE](https://doi.org/10.1094/PDIS-06-21-1253-RE)
 

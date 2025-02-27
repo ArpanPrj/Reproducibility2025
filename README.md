@@ -3,6 +3,9 @@ This is a repository for my data reproducibility class.
 
 Github is useful. So okay.. lets learn.
 
+# DOI
+[![DOI](https://zenodo.org/badge/924429688.svg)](https://doi.org/10.5281/zenodo.14934314)
+
 ## Links to analysis file
 These are links to the analysis files viewable on Github(.md). The .RMD files 
 and .HTML rendered files are also available.

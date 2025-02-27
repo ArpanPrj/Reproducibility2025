@@ -192,9 +192,9 @@ figure
 
 Knit your document together in the following formats: a. .docx (word
 document) OR .pdf with a table of contents [Link for my pdf
-file](%22R_markdown/Coding_Challenge_4/Coding_Challenge_4.pdf%22) b.
-GitHub flavored markdown (.md file). [Link for my md
-file](%22R_markdown/Coding_Challenge_4/Coding_Challenge_4.md%22)
+file](%22https://github.com/ArpanPrj/Reproducibility2025/blob/main/R_markdown/Coding_Challenge_4/Coding_Challenge_4.pdf%22)
+b. GitHub flavored markdown (.md file). [Link for my md
+file](%22https://github.com/ArpanPrj/Reproducibility2025/blob/main/R_markdown/Coding_Challenge_4/Coding_Challenge_4.md%22)
 
 # Question 4
 

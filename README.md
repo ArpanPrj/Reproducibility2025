@@ -70,6 +70,13 @@ fs::dir_tree()
 ├── README.md                           # Toplevel directory README
 ├── Reproducibility2025.Rproj           # Top level directory .Rproj file - working directory
 └── R_markdown                          # Folder with all input, output and scripts in R-markdown class
+    ├── Coding_Challange_4
+    │   ├── Coding_Challenge_4.md       # Github formatted markdown file for coding challenge 4 for R-Markdown class
+    │   ├── Coding_Challenge_4.pdf      # Html formatted file for coding challenge 4 for R-Markdown class
+    │   ├── Coding_Challenge_4.Rmd      # R-markdown file for coding challenge 4 for R-Markdown class
+    │   └── Coding_Challenge_4_files    # Folder containing all the figures of  coding challenge 4 for R-Markdown class
+    │       └── figure-gfm
+    │           └── Combined-1.png
     ├── Homework_Markdown.html          # Html formatted file for home assignment for R-markdown class
     ├── Homework_Markdown.md            # Github formatted markdown file for home assignment for R-Markdown class
     ├── Homework_Markdown.Rmd           # R-markdown file for home assignment for R-markdown class

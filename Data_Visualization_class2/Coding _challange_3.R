@@ -13,10 +13,11 @@ datum$BioRep=as.factor(datum$BioRep) # Convert biological replicate column to a 
 cbbPalette <- c( "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7","#000000")
 
 ##########Question 1
-plot<-ggplot(datum, aes(Treatment,DON,fill=Cultivar))+
+plot<-ggplot(datum, aes(Treatment,DON,fill=Cultivar,color=Cultivar))+
   geom_boxplot(outlier.shape = NA)+ #adding boxplot in figure but removing outliers(the black dots that popped up)
   geom_point(position=position_jitterdodge(dodge.width=0.9),shape=21,alpha=0.6)+#Adding jitter points over the boxplot
-  scale_fill_manual(values = cbbPalette[c(2, 3)])+#filling the points and boxplots Cultivar with two colors from the cbbPallete 
+  scale_color_manual(values = cbbPalette[c(1, 4)])+#filling the points and boxplots Cultivar with two colors from the cbbPallete 
+  scale_fill_manual(values=cbbPalette[c(2,3)])+
   xlab("")+#Changing x label
   ylab("DON(ppm)")+#Changing y label
   facet_wrap(~Cultivar,scales="free")+#faceting by cultivar
@@ -72,7 +73,7 @@ plot4<- plot+
 plot4 
 
 plot5<- plot2+ 
-  geom_pwc(aes(group=Treatment),method="t.test",label="{p.adj.format}{p.adj.signif}",hide.ns=T)
+  geom_pwc(aes(group=Treatment),method="t.test",label="{p.adj.signif}{p.adj.format}",hide.ns=T)
 plot5 
 
 plot6<- plot3+ 

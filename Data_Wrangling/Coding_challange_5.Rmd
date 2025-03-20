@@ -3,11 +3,11 @@ title: "Coding_challange_DataWrangling"
 author: "Arpan"
 date: "2025-03-19"
 output: 
+  md_document:
+    variant: gfm
   html_document:
     toc: true
     toc_float: true
-  md_document:
-    variant: gfm
 ---
 # Question 1
 Download two .csv files from Canvas called DiversityData.csv and Metadata.csv, and read them into R using relative file paths.

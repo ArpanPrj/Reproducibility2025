@@ -3,11 +3,11 @@ title: "Coding_challange_DataWrangling"
 author: "Arpan"
 date: "2025-03-19"
 output: 
-  md_document:
-    variant: gfm
   html_document:
     toc: true
     toc_float: true
+  md_document:
+    variant: gfm
 ---
 # Question 1
 Download two .csv files from Canvas called DiversityData.csv and Metadata.csv, and read them into R using relative file paths.
@@ -90,7 +90,7 @@ plot
 # Question 7
 Commit and push a gfm .md file to GitHub inside a directory called Coding Challenge 5. Provide me a link to your github written as a clickable link in your .pdf or .docx
 
-I have used uploaded the gfm .md file to github inside the directory called . 
+I have used uploaded the gfm .md file to github inside the directory called **Data_Wrangling** which has both my home and class coding assignment instead of folder named **Coding Challange 5**  
 Here is the link to my github. 
 [My github : https://github.com/ArpanPrj/Reproducibility2025 ](https://github.com/ArpanPrj/Reproducibility2025)
 

@@ -15,7 +15,7 @@ and .HTML rendered files are also available.
 - [Data Visualization Advanced](Data_Visualization_class2/Homework_DV2_Advanced.md)
 - [R Markdown Class](R_markdown/Homework_Markdown.md)
 - [Coding Challenge 4 readme](R_markdown/Coding_Challenge_4/Coding_Challenge_4.md)
-- [Data Wrangling Class](Data_wrangling)
+- [Data Wrangling Class](Data_wrangling/Homework_Data_Wrangling.md)
 ## File Tree
 ```r
 library(fs)

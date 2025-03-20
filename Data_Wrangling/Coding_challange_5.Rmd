@@ -3,11 +3,11 @@ title: "Coding_challange_DataWrangling"
 author: "Arpan"
 date: "2025-03-19"
 output: 
+  md_document:
+    variant: gfm
   html_document:
     toc: true
     toc_float: true
-  md_document:
-    variant: gfm
 ---
 # Question 1
 Download two .csv files from Canvas called DiversityData.csv and Metadata.csv, and read them into R using relative file paths.
@@ -93,5 +93,8 @@ Commit and push a gfm .md file to GitHub inside a directory called Coding Challe
 I have used uploaded the gfm .md file to github inside the directory called . 
 Here is the link to my github. 
 [My github : https://github.com/ArpanPrj/Reproducibility2025 ](https://github.com/ArpanPrj/Reproducibility2025)
+
+Here is the link to my .md document
+[MD document: https://github.com/ArpanPrj/Reproducibility2025/blob/main/Data_Wrangling/Coding_challange_5.md](https://github.com/ArpanPrj/Reproducibility2025/blob/main/Data_Wrangling/Coding_challange_5.md)
 
 I have used .html file instead of .pdf or .docx

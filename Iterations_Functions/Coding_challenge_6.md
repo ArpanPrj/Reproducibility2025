@@ -1,13 +1,31 @@
 # Question 1
 
 **Regarding reproducibility, what is the main point of writing your own
-functions and iterations?**
-
-# Question 2
+functions and iterations?** *Answer* Writing our own functions and loops
+avoids copying and pasting, making our code reusable, clear, and easy to
+repeat for reproducible results \# Question 2
 
 **In your own words, describe how to write a function and a for loop in
 R and how they work. Give me specifics like syntax, where to write code,
 and how the results are returned.**
+
+In R,while writing a function,I do function_name\<-function(input
+variables){code} i.e I start by giving the function a name and use the
+function() command to define it. I put any inputs the function needs
+inside the parentheses, and I write the code it should run inside curly
+braces { }. If I want the function to give me back a result, I use
+return() at the end.
+
+The way to write a for loop in R is for (variable in sequence) { code }.
+Inside the parentheses, I choose a variable name (usually “i”) that will
+represent each item in the sequence, and I define the range or list I
+want to loop through. For a range, I use something like 1:10 to go from
+1 to 10. For a list or vector, I can use something like c(“A”, “B”, “C”)
+to loop through each item. I can also use base R functions like rep(),
+seq() or seq_along() as per need to define the range or list. The code
+inside the curly braces { } is what I want to run during each loop. Each
+time the loop runs, the variable takes on the next value in the sequence
+or list, and the code runs using that value.
 
 # Question 3
 
@@ -99,7 +117,7 @@ iterations is shown below.**
 ``` r
 library(tidyverse)
 
-for (i in seq_along(citydata$city)) { # Here I used seq_along to loop from 1st to 40th city, i use tis for 1st city latitide and longitude
+for (i in seq_along(citydata$city)) { # Here I used seq_along to loop from 1st to 40th city, i use this for 1st city latitide and longitude
   if (i < length(citydata$city)) { # But when I used i as it is i.e 1 to 10, the j would be 41 when i is 40. This was returning me  extra combinations of city, 40th city and 41st city (which was NA). So to remove these combinations, I had to use if command to loop till i was 39 because when i is 39, j is 40 in the code below. So the 40th city is already included in the combination. This way I also avoid getting 41 in j that returns NA and increases the number of combination
     for (j in seq((i + 1), length(citydata$city))) { # this is to loop for 2nd city latitude and longitude. It is set such that when i is 1, j is 2, and so on till i reaches 39 and j reaches 40. then the loop stops
       lat1 <- citydata$lat[i]
@@ -916,7 +934,7 @@ for (i in seq_along(citydata$city)) {
 
       distance_km <- dist(lat1, lon1, lat2, lon2)
 
-      distance_df2 <- rbind( # Appending each city combination(city[i] and city [j], and their distances into the data frame after each iteration )
+      distance_df2 <- rbind( # Appending each city combination(city[i] and city [j]), and their distances into the data frame after each iteration
         distance_df2,
         data.frame(
           city1 = citydata$city[i],
@@ -1718,3 +1736,8 @@ distance_df2
 **Commit and push a gfm .md file to GitHub inside a directory called
 Coding Challenge 6. Provide me a link to your github written as a
 clickable link in your .pdf or .docx**
+
+[**Link to my github :
+https://github.com/ArpanPrj/Reproducibility2025**](https://github.com/ArpanPrj/Reproducibility2025)
+[**Link to my gfm file:
+https://github.com/ArpanPrj/Reproducibility2025/blob/main/Iterations_Functions/Coding_challenge_6.md**](https://github.com/ArpanPrj/Reproducibility2025/blob/main/Iterations_Functions/Coding_challenge_6.md)

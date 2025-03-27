@@ -3,11 +3,11 @@ title: "Coding_challenge_6"
 author: "Arpan"
 date: "2025-03-26"
 output: 
-  md_document:
-    variant: gfm
   html_document:
     toc: true
     toc_float: true
+  md_document:
+    variant: gfm
 ---
 # Question 1
 **Regarding reproducibility, what is the main point of writing your own functions and iterations?**
@@ -77,7 +77,7 @@ distance <- citydata %>%
     lat[city == "New York"],
     long[city == "New York"]
   ))
-
+distance
 ```
 
 # Question 6
@@ -86,18 +86,14 @@ distance <- citydata %>%
 ```{r}
 library(tidyverse)
 
-for (i in seq_along(citydata$city)) { # Here I used seq_along to loop from 1st to 40th city, i use this for 1st city latitide and longitude
-  if (i < length(citydata$city)) { # But when I used i as it is i.e 1 to 10, the j would be 41 when i is 40. This was returning me  extra combinations of city, 40th city and 41st city (which was NA). So to remove these combinations, I had to use if command to loop till i was 39 because when i is 39, j is 40 in the code below. So the 40th city is already included in the combination. This way I also avoid getting 41 in j that returns NA and increases the number of combination
-    for (j in seq((i + 1), length(citydata$city))) { # this is to loop for 2nd city latitude and longitude. It is set such that when i is 1, j is 2, and so on till i reaches 39 and j reaches 40. then the loop stops
-      lat1 <- citydata$lat[i]
-      lon1 <- citydata$long[i]
-      lat2 <- citydata$lat[j]
-      lon2 <- citydata$long[j]
+for (i in seq_along(citydata$city)) { # Here I used seq_along to loop from 1st to 40th city
+      lat1 <- citydata$lat[citydata$city=="Auburn"]
+      lon1 <- citydata$long[citydata$city=="Auburn"]
+      lat2 <- citydata$lat[i]
+      lon2 <- citydata$long[i]
 
       distance_km <- dist(lat1, lon1, lat2, lon2) # using the dist function I created to calculate distance
       print(distance_km)
-    }
-  }
 }
 
 
@@ -112,27 +108,23 @@ library(tidyverse)
 
 distance_df2 <- NULL #Creating a new data frame 
 
-for (i in seq_along(citydata$city)) {
-  if (i < length(citydata$city)) { 
-    for (j in seq((i + 1), length(citydata$city))) { 
-      lat1 <- citydata$lat[i]
-      lon1 <- citydata$long[i]
-      lat2 <- citydata$lat[j]
-      lon2 <- citydata$long[j]
+for (i in seq_along(citydata$city)) { # Here I used seq_along to loop from 1st to 40th city
+      lat1 <- citydata$lat[citydata$city=="Auburn"]
+      lon1 <- citydata$long[citydata$city=="Auburn"]
+      lat2 <- citydata$lat[i]
+      lon2 <- citydata$long[i]
 
       distance_km <- dist(lat1, lon1, lat2, lon2)
 
-      distance_df2 <- rbind( # Appending each city combination(city[i] and city [j]), and their distances into the data frame after each iteration
+      distance_df2 <- rbind( # Appending each city combination and their distances into the data frame after each iteration
         distance_df2,
         data.frame(
-          city1 = citydata$city[i],
-          city2 = citydata$city[j],
+          city1 = "Auburn",
+          city2 = citydata$city[i],
           distance_km = distance_km
-        )
-      )
-    }
-  }
+        ))
 }
+
 
 distance_df2
 ```

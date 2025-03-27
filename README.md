@@ -16,6 +16,7 @@ and .HTML rendered files are also available.
 - [R Markdown Class](R_markdown/Homework_Markdown.md)
 - [Coding Challenge 4 readme](R_markdown/Coding_Challenge_4/Coding_Challenge_4.md)
 - [Data Wrangling Class](Data_wrangling/Homework_Data_Wrangling.md)
+- [Iterations and functions](Iterations_Functions/Homework_Iterations_Functions.md)
 ## File Tree
 ```r
 library(fs)

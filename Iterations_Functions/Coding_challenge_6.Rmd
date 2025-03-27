@@ -1,0 +1,136 @@
+---
+title: "Coding_challenge_6"
+author: "Arpan"
+date: "2025-03-26"
+output: 
+  md_document:
+    variant: gfm
+  html_document:
+    toc: true
+    toc_float: true
+---
+# Question 1
+**Regarding reproducibility, what is the main point of writing your own functions and iterations?**
+
+# Question 2
+
+**In your own words, describe how to write a function and a for loop in R and how they work. Give me specifics like syntax, where to write code, and how the results are returned.** 
+
+# Question 3
+**This dataset contains the population and coordinates (latitude and longitude) of the 40 most populous cities in the US, along with Auburn, AL. Your task is to create a function that calculates the distance between Auburn and each other city using the Haversine formula. To do this, you'll write a for loop that goes through each city in the dataset and computes the distance from Auburn. Detailed steps are provided below.**
+
+**Read in the Cities.csv file from Canvas using a relative file path.**
+
+```{r Reading the data}
+citydata<-read.csv("Iterations_Functions/Cities.csv",na.strings="na")
+
+```
+
+# Question 4
+
+**Write a function to calculate the distance between two pairs of coordinates based on the Haversine formula (see below). The input into the function should be lat1, lon1, lat2, and lon2. The function should return the object distance_km. All the code below needs to go into the function.**
+
+```{r Creating function}
+dist<- function(lat1, lon1, lat2, lon2) {
+  # convert to radians
+  rad.lat1 <- lat1 * pi / 180
+  rad.lon1 <- lon1 * pi / 180
+  rad.lat2 <- lat2 * pi / 180
+  rad.lon2 <- lon2 * pi / 180
+
+  # Haversine formula
+  delta_lat <- rad.lat2 - rad.lat1
+  delta_lon <- rad.lon2 - rad.lon1
+  a <- sin(delta_lat / 2)^2 + cos(rad.lat1) * cos(rad.lat2) * sin(delta_lon / 2)^2
+  c <- 2 * asin(sqrt(a)) 
+
+  # Earth's radius in meters
+  earth_radius <- 6378137
+
+  # Calculate the distance in kilometers
+  distance_km <- (earth_radius * c) / 1000
+
+  return(distance_km)
+}
+```
+
+
+
+# Question 5
+**Using your function, compute the distance between Auburn, AL and New York City **
+**a.	Subset/filter the Cities.csv data to include only the latitude and longitude values you need and input as input to your function.** 
+**b.	The output of your function should be 1367.854 km**
+
+```{r}
+library(tidyverse)
+distance <- citydata %>%
+  filter(city %in% c("Auburn", "New York")) %>%
+  summarise(distance_km = dist(
+    lat[city == "Auburn"],
+    long[city == "Auburn"],
+    lat[city == "New York"],
+    long[city == "New York"]
+  ))
+
+```
+
+# Question 6
+**Now, use your function within a for loop to calculate the distance between all other cities in the data. The output of the first 9 iterations is shown below.** 
+
+```{r}
+library(tidyverse)
+
+for (i in seq_along(citydata$city)) { # Here I used seq_along to loop from 1st to 40th city, i use tis for 1st city latitide and longitude
+  if (i < length(citydata$city)) { # But when I used i as it is i.e 1 to 10, the j would be 41 when i is 40. This was returning me  extra combinations of city, 40th city and 41st city (which was NA). So to remove these combinations, I had to use if command to loop till i was 39 because when i is 39, j is 40 in the code below. So the 40th city is already included in the combination. This way I also avoid getting 41 in j that returns NA and increases the number of combination
+    for (j in seq((i + 1), length(citydata$city))) { # this is to loop for 2nd city latitude and longitude. It is set such that when i is 1, j is 2, and so on till i reaches 39 and j reaches 40. then the loop stops
+      lat1 <- citydata$lat[i]
+      lon1 <- citydata$long[i]
+      lat2 <- citydata$lat[j]
+      lon2 <- citydata$long[j]
+
+      distance_km <- dist(lat1, lon1, lat2, lon2) # using the dist function I created to calculate distance
+      print(distance_km)
+    }
+  }
+}
+
+
+```
+
+**Bonus point if you can have the output of each iteration append a new row to a dataframe, generating a new column of data. In other words, the loop should create a dataframe with three columns called city1, city2, and distance_km, as shown below. The first six rows of the dataframe are shown below.**
+
+```{r Bonus question}
+library(tidyverse)
+
+distance_df2 <- NULL #Creating a new data frame 
+
+for (i in seq_along(citydata$city)) {
+  if (i < length(citydata$city)) { 
+    for (j in seq((i + 1), length(citydata$city))) { 
+      lat1 <- citydata$lat[i]
+      lon1 <- citydata$long[i]
+      lat2 <- citydata$lat[j]
+      lon2 <- citydata$long[j]
+
+      distance_km <- dist(lat1, lon1, lat2, lon2)
+
+      distance_df2 <- rbind( # Appending each city combination(city[i] and city [j], and their distances into the data frame after each iteration )
+        distance_df2,
+        data.frame(
+          city1 = citydata$city[i],
+          city2 = citydata$city[j],
+          distance_km = distance_km
+        )
+      )
+    }
+  }
+}
+
+distance_df2
+```
+
+
+# Question 7
+**Commit and push a gfm .md file to GitHub inside a directory called Coding Challenge 6. Provide me a link to your github written as a clickable link in your .pdf or .docx**
+
+

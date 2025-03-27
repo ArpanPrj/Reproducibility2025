@@ -1489,9 +1489,11 @@ border-radius: 0px;
 <div id="question-1" class="section level1">
 <h1>Question 1</h1>
 <p><strong>Regarding reproducibility, what is the main point of writing
-your own functions and iterations?</strong> <em>Answer</em> Writing our
-own functions and loops avoids copying and pasting, making our code
-reusable, clear, and easy to repeat for reproducible results</p>
+your own functions and iterations?</strong></p>
+<p><em>Answer</em></p>
+<p>Writing our own functions and loops avoids copying and pasting,
+making our code reusable, clear, and easy to repeat for reproducible
+results</p>
 </div>
 <div id="question-2" class="section level1">
 <h1>Question 2</h1>
@@ -1597,8 +1599,8 @@ iterations is shown below.</strong></p>
 for (i in seq_along(citydata$city)) { # Here I used seq_along to loop from 1st to 40th city
       lat1 &lt;- citydata$lat[citydata$city==&quot;Auburn&quot;]
       lon1 &lt;- citydata$long[citydata$city==&quot;Auburn&quot;]
-      lat2 &lt;- citydata$lat[i]
-      lon2 &lt;- citydata$long[i]
+      lat2 &lt;- citydata$lat[i]#Assigning latitudes of each city
+      lon2 &lt;- citydata$long[i]#Assigning longitude of each city
 
       distance_km &lt;- dist(lat1, lon1, lat2, lon2) # using the dist function I created to calculate distance
       print(distance_km)

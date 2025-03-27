@@ -1,9 +1,12 @@
 # Question 1
 
 **Regarding reproducibility, what is the main point of writing your own
-functions and iterations?** *Answer* Writing our own functions and loops
-avoids copying and pasting, making our code reusable, clear, and easy to
-repeat for reproducible results
+functions and iterations?**
+
+*Answer*
+
+Writing our own functions and loops avoids copying and pasting, making
+our code reusable, clear, and easy to repeat for reproducible results
 
 # Question 2
 
@@ -126,8 +129,8 @@ library(tidyverse)
 for (i in seq_along(citydata$city)) { # Here I used seq_along to loop from 1st to 40th city
       lat1 <- citydata$lat[citydata$city=="Auburn"]
       lon1 <- citydata$long[citydata$city=="Auburn"]
-      lat2 <- citydata$lat[i]
-      lon2 <- citydata$long[i]
+      lat2 <- citydata$lat[i]#Assigning latitudes of each city
+      lon2 <- citydata$long[i]#Assigning longitude of each city
 
       distance_km <- dist(lat1, lon1, lat2, lon2) # using the dist function I created to calculate distance
       print(distance_km)

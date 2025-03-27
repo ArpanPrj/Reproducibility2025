@@ -3,11 +3,11 @@ title: "Coding_challenge_6"
 author: "Arpan"
 date: "2025-03-26"
 output: 
+  md_document:
+    variant: gfm
   html_document:
     toc: true
     toc_float: true
-  md_document:
-    variant: gfm
 ---
 # Question 1
 **Regarding reproducibility, what is the main point of writing your own functions and iterations?**

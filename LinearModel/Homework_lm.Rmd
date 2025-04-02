@@ -1,0 +1,154 @@
+---
+title: "Homework_LM"
+author: "Arpan"
+date: "2025-04-01"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+  md_document:
+    variant: gfm
+---
+# Linear model
+Lets load in our mtcars dataset to demonstrate some basic linear regression.
+
+```{r Obtaining data}
+data("mtcars") #loading the biultin database
+```
+
+```{r Using ggplot}
+library(ggplot2)
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_smooth(method = lm, se = FALSE, color = "grey") +
+  geom_point(aes(color = wt)) +
+  xlab("Weight") + 
+  ylab("Miles per gallon") +
+  scale_colour_gradient(low = "forestgreen", high = "red") +
+  theme_classic()
+```
+Looks like there is a relationship? How do we know? 
+
+We run a linear model - or if its a continuous x variable and a continuous y variable we would call it a regression. If we are looking to call it a cause and effect relationship we may call it a correlation. 
+
+The simplest way to do this is with the function `lm()` and run summary of this linear model to output some summary statistics
+```{r running linear model}
+lm1<-lm(mpg~wt,data=mtcars)
+summary(lm1)
+```
+
+We could run an ANOVA. 
+```{r}
+anova(lm1)
+```
+We can also run correlation analysis
+```{r}
+cor.test(mtcars$wt, mtcars$mpg)
+```
+This gives us a different r value which is the correlation statistic. 
+The closer to -1 or 1 means the stronger the correlation between the two variables. 
+
+**The pvalue is the same in each of these analysis**
+
+## Using a dataset for linear model analyses
+```{r}
+bull.rich <- read.csv("LinearModel/Bull_richness.csv")
+```
+
+Filter our dataset to include one treatment and growth stage for demonstration of a t-test.
+```{r}
+library(tidyverse)
+bull.rich.sub<-bull.rich %>%
+  filter(GrowthStage == "V8" & Treatment == "Conv.")
+```
+
+```{r}
+t.test(richness~Fungicide, data = bull.rich.sub)
+```
+We can use lm() or anova to get same result.
+```{r}
+summary(lm(richness~Fungicide, data = bull.rich.sub))
+anova(lm(richness~Fungicide, data = bull.rich.sub))
+```
+In reality, they are all just linear models
+
+## Linear model in Categorical variable
+What if our variable is Categorical?
+Lets filter our dataset to have only richness in different crop growth stages in the control samples in soybean in conventional management. Here we have three growth stages. 
+```{r}
+bull.rich.sub2 <- bull.rich %>%
+  filter(Fungicide == "C" & Treatment == "Conv." & Crop == "Corn")
+```
+Lets visualize our data
+```{r}
+ggplot(bull.rich.sub2, aes(x = GrowthStage, y = richness)) +
+  geom_boxplot()
+```
+
+```{r}
+summary(lm(richness ~ GrowthStage, data = bull.rich.sub2))
+anova(lm(richness ~ GrowthStage, data = bull.rich.sub2))
+```
+
+## emmeans
+
+But now how do we know which is different from the the other group?
+
+We can do post-hoc tests to find out. The simplest way to think of this is individual t-tests across groups. The most versitile way to do this is with the packages `emmeans`, and `multcomp`. 
+
+The lsmeans are the least squared means - they are the means estimated by the linear model. This is in contrast to the arethmatic means which are the means calculated or the average.
+```{r}
+library(emmeans)
+library(multcomp)
+library(multcompView)
+lm3<-lm(richness ~ GrowthStage, data = bull.rich.sub2)
+lsmeans <- emmeans(lm3, ~GrowthStage) # estimate lsmeans of variety within siteXyear
+results_lsmeans <- cld(lsmeans, alpha = 0.05, details = TRUE) # contrast with Tukey ajustment by default. 
+results_lsmeans
+```
+
+# Interaction
+What if we care about the interactions between factors?
+
+Lets filter our dataset to include fungicide term. 
+
+```{r}
+bull.rich.sub3 <- bull.rich %>%
+  filter(Treatment == "Conv." & Crop == "Corn")
+
+bull.rich.sub3$GrowthStage <- factor(bull.rich.sub3$GrowthStage, levels = c("V6", "V8", "V15"))
+```
+Now lets set up our linear model with fungicide interaction factor
+```{r}
+# write it like this
+lm.interaction <- lm(richness ~ GrowthStage * Fungicide, data = bull.rich.sub3)# using * gives interaction 
+summary(lm.interaction)
+anova(lm.interaction)
+```
+
+Conducting post-hoc test within the levels of growthstage. 
+```{r}
+lsmeans<-emmeans(lm.interaction,~Fungicide|GrowthStage)#Growthstages levels within fungicide 
+results_lsmeanss<-cld(lsmeans,alpha=0.05,details=TRUE)
+results_lsmeanss
+```
+
+By visualization we can see that it looks like V8 fungicide affected richness more than others and by V15 they recovered.
+
+```{r}
+ggplot(bull.rich.sub3,aes(x=GrowthStage,y=richness, colour=Fungicide))+
+  geom_boxplot()
+```
+
+# Mixed effects models
+In mixed effects models we have fixed and random effects term. The random effects term is something that affects the variation in y. A fixed effect is something that affects the mean of y.
+```{r}
+library(lme4)
+lm.interaction2<-lmer(richness~GrowthStage*Fungicide+(1|Rep),data=bull.rich.sub3)
+summary(lm.interaction)
+summary(lm.interaction2)
+
+lsmeanss<-emmeans(lm.interaction2,~Fungicide|GrowthStage)
+results_lsmeanss2<-cld(lsmeanss,alpha=0.05,details=TRUE)
+results_lsmeanss2
+```
+

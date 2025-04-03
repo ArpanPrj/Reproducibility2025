@@ -241,11 +241,11 @@ confint(lm2)
     ## DaysAfterPlanting21    6.788646   15.822465
     ## DaysAfterPlanting28    6.427535   15.461354
 
-We found that Treatment 2 had 134.53 (+-6.775364;+-95% CI) units less
-emergence time than Treatment 1. The intercept is the average emergence
-days for treatment 1 7 days after planting which is 182.163 days. The
-coefficient of Treatment 2 is the difference in emergence days between
-treatment 2 and treatment 1.
+We found that Treatment 2 had 134.53 (+-6.775364;+-95% CI) less
+emergence than Treatment 1. The intercept is the average emergence for
+treatment 1 7 days after planting which is 182.163. The coefficient of
+Treatment 2 is the difference in emergence between treatment 2 and
+treatment 1.
 
 # Question 4
 
@@ -321,17 +321,15 @@ results_lsmeans
     ## Results are averaged over the levels of: DaysAfterPlanting 
     ## P value adjustment: tukey method for comparing a family of 9 estimates
 
-The analysis identified three distinct tiers of treatment effectiveness
-on emergence. Treatment 2 (mean = 55.6) had significantly lower
-emergence than all others. Treatment 7 (mean = 188.0) showed moderate
-emergence, higher than Treatment 2 but statistically similar to
-Treatments 1, 9, 4, and 8 (means = 190.2–197.9). The highest emergence
-occurred in Treatments 6, 3, and 5 (means = 199.0–200.9), which were
-statistically similar from one another and from the Treatment 1,9,4 and
-8. While Treatments 6, 3, and 5 outperformed Treatment 7 (p \< 0.05),
-there were no significant differences within the upper group or between
-the upper and intermediate clusters, suggesting most treatments (except
-Treatment 2) perform similarly.
+Treatment 2 (mean = 55.6) had significantly lower emergence than all
+others. Treatment 7 (mean = 188.0) had higher emergence than Treatment 2
+but its emergence was statistically similar to Treatments 1, 9, 4, and
+8. The highest emergence was in Treatments 5 which is statistically
+similar from Treatment 6 and 3 and the Treatment 1,9,4 and 8. While
+Treatments 6, 3, and 5 outperformed Treatment 7, there were no
+significant differences within them (6,3and 5) or between them Treatment
+1,4,8, and 9, suggesting most treatments (except Treatment 2) perform
+similarly.
 
 # Question 5
 
@@ -392,3 +390,15 @@ statistically similar to treatments 1, 4, 8, and 9 that are labelled
 with overlapping letters ( ab ). These treatment labels also overlap
 with “a” indicating no significant differences with higher treatments (
 3, 5, 6 labeled “a”).
+
+# Question 6
+
+**Generate the gfm .md file along with a .html, .docx, or .pdf. Commit,
+and push the .md file to github and turn in the .html, .docx, or .pdf to
+Canvas. Provide me a link here to your github.**
+
+[My
+github:*https://github.com/ArpanPrj/Reproducibility2025.git*](https://github.com/ArpanPrj/Reproducibility2025.git)
+
+[Coding Challenge 7 md document:
+*https://github.com/ArpanPrj/Reproducibility2025/blob/main/LinearModel/Coding_challenge_7.md*](https://github.com/ArpanPrj/Reproducibility2025/blob/main/LinearModel/Coding_challenge_7.md)

@@ -4,7 +4,6 @@
 path and load the following libraries. tidyverse, lme4, emmeans,
 multcomp, and multcompView. Turn the Treatment , DaysAfterPlanting and
 Rep into factors using the function as.factor**
-**STAND$Treatment <- as.factor(STAND$Treatment) \# example shown here.**
 
 ``` r
 #Loading libraries
@@ -172,8 +171,8 @@ summary and ANOVA results. Then, interpret the intercept and the
 coefficient for Treatment 2.
 
 Based on the results of the linear model in question 2, we dont need to
-fit the interaction term because the interaction is not significant as
-shown by anova and summary of the model.
+fit the interaction term because the interaction is not statistically
+significant (pvalue=1) as shown by anova and summary of the model.
 
 ``` r
 lm2<-lm(Emergence~Treatment+DaysAfterPlanting,data=plantdata)
@@ -242,10 +241,10 @@ confint(lm2)
     ## DaysAfterPlanting28    6.427535   15.461354
 
 We found that Treatment 2 had 134.53 (+-6.775364;+-95% CI) less
-emergence than Treatment 1. The intercept is the average emergence for
-treatment 1 7 days after planting which is 182.163. The coefficient of
-Treatment 2 is the difference in emergence between treatment 2 and
-treatment 1.
+emergence than Treatment 1 (pvalue\< 2e-16). The intercept is the
+average emergence for treatment 1 7 days after planting which is
+182.163. The coefficient of Treatment 2 is the difference in emergence
+between treatment 2 and treatment 1.
 
 # Question 4
 
@@ -383,9 +382,9 @@ plot_cldbars_onefactor(lm2,"Treatment")
 
 The letters above each bar represent statistical groupings from a Tukey
 HSD test (α = 0.05). Treatments sharing the same letter (e.g., “a”,
-“ab”) are not significantly different in emergence. For example, if
-Treatment 2 is labeled “c” (lowest bar), it is significantly worse than
-all others. Treatment 7, the second lowest, (labelled “b”) is
+“ab”) are not significantly different in emergence. For example, Here,
+the Treatment 2 is labeled “c” (lowest bar), and it is significantly
+worse than all others. Treatment 7, the second lowest, (labelled “b”) is
 statistically similar to treatments 1, 4, 8, and 9 that are labelled
 with overlapping letters ( ab ). These treatment labels also overlap
 with “a” indicating no significant differences with higher treatments (
@@ -397,8 +396,8 @@ with “a” indicating no significant differences with higher treatments (
 and push the .md file to github and turn in the .html, .docx, or .pdf to
 Canvas. Provide me a link here to your github.**
 
-[My
-github:*https://github.com/ArpanPrj/Reproducibility2025.git*](https://github.com/ArpanPrj/Reproducibility2025.git)
+[**My
+github**:*https://github.com/ArpanPrj/Reproducibility2025.git*](https://github.com/ArpanPrj/Reproducibility2025.git)
 
-[Coding Challenge 7 md document:
+[**Coding Challenge 7 md document**:
 *https://github.com/ArpanPrj/Reproducibility2025/blob/main/LinearModel/Coding_challenge_7.md*](https://github.com/ArpanPrj/Reproducibility2025/blob/main/LinearModel/Coding_challenge_7.md)
